@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./index.css" type="text/css">
+</head>
+<body>
+  <input id="popup" type="button" value="弹出关于对话框">
+  <hr>
+  <!-- <div class='notepad-about-goto'>
+    <div class='aboutbox'>
+        <div class='titlebar'>
+          <p class='title'>关于“记事本”</p>
+          <span class='close'>×</span>
+        </div>
+        <div class='main'>
+
+          <input class='btn-close' type='button' value='确定'>
+        </div>
+    </div>
+  </div> -->
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> 
+<script type="text/javascript" src="./index.js"></script>
+<script>
+  $(function(){
+    var $popup=$('#popup')
+    $popup.click(function(){
+          $aboutGoto.show({
+          num:10,
+          title:"发送验证码",
+        })
+        $aboutGoto.dragmove()
+    })
+  })
+</script>
+</body>
+</html>
