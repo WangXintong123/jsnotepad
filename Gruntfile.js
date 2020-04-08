@@ -16,7 +16,7 @@ module.exports=function(grunt){
             options: {
               configFile: '.eslintrc.json'
             },
-            target:'./fontbox/font.js'
+            target:'./aboutbox/index.js'
         },
         htmlmin:{
             options:{
