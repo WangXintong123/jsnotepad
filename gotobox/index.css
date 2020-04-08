@@ -18,12 +18,12 @@
     position: relative;
     user-select: none;
 }
-.titlebar{
+.gttitlebar{
     background-color: white;
     font-size: 1.3em;
     height:30px;
 }
-.title{
+.gttitle{
     left:10px;
     line-height: 30px;
     position: absolute;

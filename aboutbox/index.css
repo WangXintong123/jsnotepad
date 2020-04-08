@@ -18,12 +18,12 @@
     position: relative;
     user-select: none;
 }
-.titlebar{
+.abtitlebar{
     background-color: white;
     font-size: 1.3em;
     height:30px;
 }
-.title{
+.abtitle{
     left:10px;
     line-height: 30px;
     position: absolute;
@@ -51,3 +51,29 @@
     right:14px;
     bottom:16px;
 }
+.main-name{
+    width:350px;
+    height:100px;
+    margin:0 auto;
+    font-size: 65px;
+    font-weight: bolder;
+    color:rgb(0, 140, 255);
+    margin-top:50px;
+    margin-bottom: 30px;
+}
+img{
+    margin-top: 40px;
+    margin-left: 10px;
+    float:left;
+}
+.main-detail{
+    width:400px;
+    height:200px;
+    display:inline-block;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+.main-detail p{
+    font-size: 20px;
+}
+

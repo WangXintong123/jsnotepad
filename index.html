@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0">
+  <title>记事本</title>
+  <!-- build:css bundle.min.css -->
+  <link rel="stylesheet" href="menubar/menu.css">
+  <link rel="stylesheet" href="aboutbox/index.css">
+  <link rel="stylesheet" href="fontbox/font.css">
+  <link rel="stylesheet" href="gotobox/index.css">
+  <!-- endbuild -->
+</head>
+<body>
+  <div class="notepad-app"></div>
+</body>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<!-- build:js bundle.min.js -->
+<script src="menubar/menu.js"></script>
+<script src="aboutbox/index.js"></script>
+<script src="fontbox/font.js"></script>
+<script src="gotobox/index.js"></script>
+<script>
+  $menubar.show()
+  $menubar.menuClick(),
+  $menubar.showFont(),
+  $menubar.showAbout(),
+  $menubar.showGoto(),
+  $menubar.txtClick()
+</script>
+<!-- endbuild -->
+</html>

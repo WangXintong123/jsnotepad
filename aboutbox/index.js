@@ -1,22 +1,25 @@
-var $dlgGoto=(function(){
+var $dlgAbout=(function(){
       var html=
-      "<div class='notepad-dlg-goto'>"+
-      "<div class='dialogbox'>"+
-          "<div class='titlebar'>"+
-            "<p class='title'>转到指定行</p>"+
-            "<span class='close'>×</span>"+
+      "<div class='notepad-about-goto'>"+
+    "<div class='aboutbox'>"+
+        "<div class='abtitlebar'>"+
+          "<p class='abtitle'>关于“记事本”</p>"+
+          "<span class='close'>×</span>"+
+        "</div>"+
+        "<div class='main'>"+
+          "<div class='main-name'>JSNotepad</div>"+
+          "<hr>"+
+          "<img src='../images/book.png' >"+
+          "<div class='main-detail'>"+
+            "<p>作者：王心彤</p>"+
+            "<p>QQ：815400083</p>"+
+            "<p>仓库地址：<a href='https://github.com/WangXintong123/jsnotepad'>https://github.com/WangXintong123/jsnotepad</a></p>"+
           "</div>"+
-          "<div class='main'>"+
-            "<label>行号(L):</label>"+
-            "<br>"+
-            "<input class='text-line-mum' type='text'>"+
-            "<br>"+
-            "<input class='btn-goto' type='button' value='转到'>"+
-            "<input class='btn-close' type='button' value='取消'>"+
-          "</div>"+
-      "</div>"+
+          "<input class='btn-close' type='button' value='确定'>"+
+        "</div>"+
+    "</div>"+
   "</div>"
-  var $dlg=$(html),
+  var $about=$(html),
       cfg = {
           container:'body',
           num:6,
@@ -25,7 +28,7 @@ var $dlgGoto=(function(){
       };
     function show(conf){
         // 1.DOM draw
-        $(cfg.container).append($dlg);
+        $(cfg.container).append($about);
         $.extend(cfg,conf);
         // 2.event bind
         $('.close').hover(function(){
@@ -39,12 +42,15 @@ var $dlgGoto=(function(){
         $('.close').click(function(){
             $('.close').css('backgroundColor', 'white');
             $('.close').css('color', 'gray');
-            $dlg.remove(); 
+            $about.remove(); 
        })
+       $('.btn-close').click(function(){
+        $about.remove(); 
+   })
       
     }    
     function dragmove(){
-        $('.dialogbox').mousedown(function (e) { 
+        $('.aboutbox').mousedown(function (e) { 
             var offset = $(this).position();//DIV在页面的位置  使用position定位
             var x = e.pageX - offset.left;//获得鼠标指针离DIV元素左边界的距离 
             var y = e.pageY - offset.top;//获得鼠标指针离DIV元素上边界的距离 
@@ -55,32 +61,12 @@ var $dlgGoto=(function(){
                 thas.animate({ left: _x + "px", top: _y + "px" }, 0.5);
             })
            });
-           $(".dialogbox").mouseup(function () {
+           $(".aboutbox").mouseup(function () {
             $(cfg.container).off("mousemove");
         });   
-    }
-    function check(){
-        $('.btn-goto').click(function(){
-            if(/^\+?[1-9][0-9]*$/.test($(".text-line-mum").val())){
-                if($(".text-line-mum").val()>10){
-                    alert("行数超过了总行数")
-                }
-                else{
-                    console.log("跳转到"+$(".text-line-mum").val()+"页")
-                }
-            }else{
-                alert("请输正确入数值")
-            }
-            
-        })        
-        $(".btn-close").click(function(){ 
-            $dlg.remove(); 
-        });
-        
     }
      return{
          show:show,
          dragmove:dragmove,
-         check:check,
      }
   }())

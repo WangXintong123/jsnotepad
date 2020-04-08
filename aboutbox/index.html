@@ -16,7 +16,14 @@
           <span class='close'>×</span>
         </div>
         <div class='main'>
-
+          <div class="main-name">JSNotepad</div>
+          <hr>
+          <img src="../images/book.png" alt="">
+          <div class="main-detail">
+            <p>作者：王心彤</p>
+            <p>QQ：815400083</p>
+            <p>仓库地址：<a href="https://github.com/WangXintong123/jsnotepad">https://github.com/WangXintong123/jsnotepad</a></p>
+          </div>
           <input class='btn-close' type='button' value='确定'>
         </div>
     </div>
@@ -27,11 +34,11 @@
   $(function(){
     var $popup=$('#popup')
     $popup.click(function(){
-          $aboutGoto.show({
+          $dlgAbout.show({
           num:10,
           title:"发送验证码",
         })
-        $aboutGoto.dragmove()
+        $dlgAbout.dragmove()
     })
   })
 </script>

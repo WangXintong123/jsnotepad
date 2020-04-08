@@ -3,26 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <title>字体对话框布局和测试页面</title>
-  <link rel="stylesheet" href="normalize.css">
-  <link rel="stylesheet" href="common.css">
-  <link rel="stylesheet" href="list.css">
   <link rel="stylesheet" href="font.css">
 </head>
 <body>
-<div class="test">
+<!-- <div class="test">
   <input type="button" value="弹出对话框">
-</div>
-<!--
-<div class="notepad-dlg-mask notepad-dlg-font">
-  <div class="dialogbox notepad-dlgbox">
+</div> -->
+
+<!-- <div class="notepad-dlg-mask notepad-dlg-font"> -->
+  <!-- <div class="dialogbox notepad-dlgbox">
     <div class="notepad-dlg-titlebar">
       <p class="title">字体</p>
       <span class="close-btn">✖</span>
     </div>
     <div class="main notepad-dlg-main">
-      <div class="font-family"><p>字体(F):</p></div>
-      <div class="font-style"><p>字形(Y):</p></div>
-      <div class="font-size"><p>大小(S):</p></div>
+      <div class="font-family">
+        <p>字体(F):</p>
+        <input type="text" id="family">
+        <div id="choosef">
+          <ul id="listf"></ul>
+        </div>
+      </div>
+      <div class="font-style">
+        <p>字形(Y):</p>
+        <input type="text" id="fstyle">
+        <div id="choosey">
+            <ul id="listy"></ul>
+        </div>
+      </div>
+      <div class="font-size">
+        <p>大小(S):</p>
+        <input type="text" id="size">
+        <div id="chooses">
+            <ul id="lists"></ul>
+        </div>
+      </div>
       <fieldset class="sample">
         <legend>示例</legend>
         <p>AaBbYyZz</p>
@@ -39,25 +54,21 @@
       <input class="btn-ok btn" type="button" value="确定">
       <input class="btn-cancel btn" type="button" value="取消">
     </div>
-  </div>
+  </div> -->
 </div>
--->
+
 <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="http://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src="list.js"></script>
+<script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="font.js"></script>
 <script>
-$(function() {
-    $btnTest = $('div.test>input[type="button"]');
-
-    $btnTest.click(function() {
-      $dlgFont.show({
-        okHandler: function(e) {
-          console.log(e);
-        }
-      });
-    });
-});
+  $font.show();
+  $font.dragmove();
+  $font.initcolor();
+  $font.fclick()
+  $font.yclick()
+  $font.sclick()
+  $font.init()
+  // $font.getInfo()
 </script>
 </body>
 </html>
