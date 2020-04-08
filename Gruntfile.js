@@ -1,15 +1,5 @@
 module.exports=function(grunt){
     grunt.initConfig({
-        htmlmin:{
-            options:{
-                removeComments:true,
-                collapseWhitespace:true
-            },
-            files:{
-                src:'./index.html',
-                dest:'dist/index.html'
-            }
-        },
         htmlhint: {
             options: {
               htmlhintrc: '.htmlhintrc'
@@ -28,21 +18,31 @@ module.exports=function(grunt){
             },
             target:'./**/*.js'
         },
+        htmlmin:{
+            options:{
+                removeComments:true,
+                collapseWhitespace:true
+            },
+            files:{
+                src:'./index.html',
+                dest:'dist/index.html'
+            }
+        },
+        cssmin: {
+            'dist/css/font.css': 'fontbox/font.css'
+        },
+        uglify: {
+          release:{
+              files:{
+                 'dist/js/font.js': 'fontbox/font.js'   
+              }
+          }
+        },
         concat: {
             js: {
               src:'./**/*.js',
               dest: 'dist/bundle.js'
             },
-            css: {
-              src:'./com/**/*.css',
-              dest: 'dist/bundle.css'
-            }
-        },
-        cssmin: {
-            'dist/bundle.min.css': 'dist/bundle.css'
-        },
-        uglify: {
-            'dist/bundle.min.js': 'dist/bundle.js'
         },
     });
 
@@ -56,6 +56,7 @@ module.exports=function(grunt){
 
     grunt.loadNpmTasks('grunt-contrib-concat');
 
-    grunt.registerTask('lint', ['htmlhint', 'csslint', 'eslint']);
-    grunt.registerTask('build',['htmlmin','cssmin','uglify','concat'])
+    grunt.registerTask('list', ['concat']);
+    grunt.registerTask('default', ['htmlhint', 'csslint', 'eslint']);
+    grunt.registerTask('minify',['htmlmin','cssmin','uglify'])
 }
