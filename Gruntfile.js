@@ -4,19 +4,19 @@ module.exports=function(grunt){
             options: {
               htmlhintrc: '.htmlhintrc'
             },
-            src: ['*.html', './**/*.html']
+            src: 'index.html'
         },
         csslint: {
             options: {
               csslintrc: '.csslintrc'
             },
-            src:'./**/*.css'
+            src:'./fontbox/font.css'
         },
         eslint: {
             options: {
               configFile: '.eslintrc.json'
             },
-            target:'./**/*.js'
+            target:'./fontbox/font.js'
         },
         htmlmin:{
             options:{
